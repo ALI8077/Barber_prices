@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import logo 
+from './barber logo.png';
 import './App.css';
-
+import {useState} from 'react'
+import MyDatePicker from './MyDatePicker';
+import Button from '@mui/material/Button';
+import  Prices from './Prices'
+import First from './First';
+import Second from './Second';
 function App() {
+  const [page, setPage] = useState(1)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      {page == 1 ? <First setPage={setPage}/> : <Second setPage={setPage}/>}
     </div>
   );
 }
